@@ -5,7 +5,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import org.rapidpm.commons.cdi.fx.JavaFXBaseController;
+import org.rapidpm.commons.cdi.logger.CDILogger;
+import org.rapidpm.module.se.commons.logger.Logger;
 
+import javax.inject.Inject;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -14,6 +17,7 @@ import java.util.ResourceBundle;
  */
 public class MainPaneController extends JavaFXBaseController {
 
+  @Inject @CDILogger Logger logger;
 
   @FXML public PasswordField passwordField;
   @FXML public Button btn;

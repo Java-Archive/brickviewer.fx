@@ -20,16 +20,34 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.layout.VBox?>
 <fx:root type="org.rapidpm.iot.tinkerforge.brickviewer.fx.mainpane.MainPane"
          xmlns:fx="http://javafx.com/fxml">
+  <children>
+    <VBox >
+      <children>
+        <MenuBar fx:id="menubar" >
+          <menus>
+            <Menu fx:id="menuMain" text="Main">
+              <items>
+                <MenuItem fx:id="mbtnClose" text="Close" onAction="#mbtnClose"/>
+              </items>
+            </Menu>
+          </menus>
+        </MenuBar>
+      </children>
 
-  <Text id="welcome-text" text="Welcome" />
-  <Label text="User Name:" />
-  <TextField fx:id="loginField" />
-  <Label text="Password:" />
-  <PasswordField fx:id="passwordField" />
-  <HBox alignment="BOTTOM_RIGHT" >
-    <Button fx:id="btn" onAction="#handleSubmitButtonAction" text="Sign In"/>
-  </HBox>
-  <Text fx:id="feedback" />
+
+      <Text id="welcome-text" text="Welcome"/>
+      <Label text="User Name:"/>
+      <TextField fx:id="loginField"/>
+      <Label text="Password:"/>
+      <PasswordField fx:id="passwordField"/>
+      <HBox alignment="BOTTOM_RIGHT">
+        <Button fx:id="btn" onAction="#handleSubmitButtonAction" text="Sign In"/>
+      </HBox>
+      <Text fx:id="feedback" text="feedback"/>
+
+    </VBox>
+  </children>
 </fx:root>

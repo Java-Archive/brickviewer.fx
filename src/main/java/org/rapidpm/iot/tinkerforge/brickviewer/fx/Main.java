@@ -27,7 +27,7 @@ public class Main extends CDIJavaFXBaseApplication {
 
 
   public void startCDI(@Observes @CDIStartupScene Stage stageCDI){
-    stageCDI.setScene(new Scene(mainPane, 300, 275));
+    stageCDI.setScene(new Scene(mainPane, 2280, 1024));
     stageCDI.show();
   }
 

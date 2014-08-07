@@ -16,6 +16,10 @@ public class MainContextResolver implements ContextResolver {
 
   @Override
   public AnnotationLiteral resolveContext(Class<?> aClass) {
-    return new AnnotationLiteral<BrickViewerFX>(){};
+    if(aClass.getPackage().getName().contains("org.rapidpm.iot.tinkerforge.brickviewer.fx")){
+      return new AnnotationLiteral<BrickViewerFX>(){};
+    } else {
+      return null;
+    }
   }
 }

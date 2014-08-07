@@ -25,16 +25,16 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      <dependency>
-        <groupId>org.controlsfx</groupId>
-        <artifactId>controlsfx</artifactId>
-        <version>8.0.6</version>
-      </dependency>
+
     </dependencies>
   </dependencyManagement>
 
 
   <dependencies>
+    <dependency>
+      <groupId>org.rapidpm.modul</groupId>
+      <artifactId>javafx-commons</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.rapidpm.modul</groupId>
       <artifactId>cdi-commons</artifactId>
@@ -56,51 +56,55 @@
     <dependency>
       <groupId>eu.hansolo.enzo</groupId>
       <artifactId>Enzo</artifactId>
-      <version>0.1</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.testfx</groupId>
+      <artifactId>testfx-core</artifactId>
+      <version>4.0.0.SNAPSHOT</version>
+    </dependency>
   </dependencies>
 
 
-  <!--<inceptionYear>2013</inceptionYear>-->
-  <!--<organization>-->
-  <!--<name>RapidPM</name>-->
-  <!--<url>http://www.rapidpm.org</url>-->
-  <!--</organization>-->
-  <!--<scm>-->
-  <!--<url>https://bitbucket.org/rapidpm/rapidpm-modules</url>-->
-  <!--<connection>scm:git:https://bitbucket.org/rapidpm/modules.git</connection>-->
-  <!--<developerConnection>scm:git:https://bitbucket.org/rapidpm/modules.git</developerConnection>-->
-  <!--&lt;!&ndash;<tag>master</tag>&ndash;&gt;-->
-  <!--<tag>rapidpm-parent-2.0</tag>-->
-  <!--</scm>-->
-  <!--<developers>-->
-  <!--<developer>-->
-  <!--<name>Sven Ruppert</name>-->
-  <!--<email>sven.ruppert@rapidpm.org</email>-->
-  <!--<roles>-->
-  <!--<role>Developer</role>-->
-  <!--</roles>-->
-  <!--</developer>-->
-  <!--</developers>-->
+  <inceptionYear>2014</inceptionYear>
+  <organization>
+    <name>RapidPM</name>
+    <url>http://www.rapidpm.org</url>
+  </organization>
+  <scm>
+    <url>http://stash.rapidpm.org/scm/mod/brickviewer.fx</url>
+    <connection>scm:git:http://stash.rapidpm.org/scm/mod/brickviewer.fx.git</connection>
+    <developerConnection>scm:git:http://stash.rapidpm.org/scm/mod/brickviewer.fx.git</developerConnection>
+    <!--<tag>master</tag>-->
+    <tag>develop</tag>
+  </scm>
+  <developers>
+    <developer>
+      <name>Sven Ruppert</name>
+      <email>sven.ruppert@rapidpm.org</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
   <!--<issueManagement>-->
-  <!--<system>Jira</system>-->
-  <!--<url>http://jira.rapidpm.org/browse/MOD#selectedTab=com.atlassian.jira.plugin.system.project%3Aissues-panel</url>-->
+    <!--<system>Jira</system>-->
+    <!--<url>http://jira.rapidpm.org/browse/MOD#selectedTab=com.atlassian.jira.plugin.system.project%3Aissues-panel</url>-->
   <!--</issueManagement>-->
   <!--<ciManagement>-->
-  <!--<system>Bamboo</system>-->
-  <!--<url>http://bamboo.rapidpm.org/</url>-->
-  <!--&lt;!&ndash;<notifiers>&ndash;&gt;-->
-  <!--&lt;!&ndash;<notifier></notifier>&ndash;&gt;-->
-  <!--&lt;!&ndash;</notifiers>&ndash;&gt;-->
+    <!--<system>Bamboo</system>-->
+    <!--<url>http://bamboo.rapidpm.org/</url>-->
+    <!--&lt;!&ndash;<notifiers>&ndash;&gt;-->
+    <!--&lt;!&ndash;<notifier></notifier>&ndash;&gt;-->
+    <!--&lt;!&ndash;</notifiers>&ndash;&gt;-->
   <!--</ciManagement>-->
-  <!--<licenses>-->
-  <!--<license>-->
-  <!--<name>The Apache Software License, Version 2.0</name>-->
-  <!--<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>-->
-  <!--<distribution>repo</distribution>-->
-  <!--<comments>A business-friendly OSS license</comments>-->
-  <!--</license>-->
-  <!--</licenses>-->
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
 
 </project>

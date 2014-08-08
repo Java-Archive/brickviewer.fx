@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import org.rapidpm.iot.tinkerforge.brickviewer.fx.mainpane.showdiagram.ShowDiagramButtonCellFactory?>
+<fx:root type="org.rapidpm.iot.tinkerforge.brickviewer.fx.datasourcepane.DataSourcePane"
+         xmlns:fx="http://javafx.com/fxml">
+
+  <children>
+   <VBox>
+     <children>
+
+       <TableView fx:id="connectionsTableView">
+         <columns>
+           <TableColumn fx:id="tcServerIP" text="tcServerIP">
+             <cellValueFactory>
+               <PropertyValueFactory property="server" />
+             </cellValueFactory>
+           </TableColumn>
+           <TableColumn fx:id="tcServerPort" text="tcServerPort">
+             <cellValueFactory>
+               <PropertyValueFactory property="port" />
+             </cellValueFactory>
+           </TableColumn>
+           <TableColumn fx:id="tcMasterUID" text="tcMasterUID">
+             <cellValueFactory>
+               <PropertyValueFactory property="masterUID" />
+             </cellValueFactory>
+           </TableColumn>
+
+           <TableColumn fx:id="tcShowDiagram" text="tcCloseConnection" >
+             <cellValueFactory>
+               <CloseConnectionButtonCellFactory/>
+             </cellValueFactory>
+             <cellFactory>
+               <CloseConnectionButtonCellValueFactory/>
+             </cellFactory>
+           </TableColumn>
+
+         </columns>
+         <items>
+           <!--<FXCollections fx:factory="observableArrayList">-->
+             <!--<BrickElement server="127.0.0.1"  port="4433" masterUID="UZTREW" brickUID="TTRREE" brickType="Temperatur" showDiagram="false" />-->
+             <!--<BrickElement server="127.0.0.1"  port="4433" masterUID="aswedf" brickUID="TTRREE" brickType="Temperatur" showDiagram="false" />-->
+             <!--<BrickElement server="127.0.0.1"  port="4433" masterUID="Uoihef" brickUID="TTRREE" brickType="Temperatur" showDiagram="false" />-->
+             <!--<BrickElement server="127.0.0.1"  port="4433" masterUID="oiuhsf" brickUID="TTRREE" brickType="Temperatur" showDiagram="false" />-->
+             <!--<BrickElement server="127.0.0.1"  port="4433" masterUID="servtc" brickUID="TTRREE" brickType="Temperatur" showDiagram="false" />-->
+           <!--</FXCollections>-->
+         </items>
+       </TableView>
+
+     </children>
+   </VBox>
+  </children>
+</fx:root>

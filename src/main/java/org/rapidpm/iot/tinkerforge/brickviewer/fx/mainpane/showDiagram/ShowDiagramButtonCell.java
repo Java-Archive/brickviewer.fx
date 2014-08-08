@@ -1,5 +1,7 @@
-package org.rapidpm.iot.tinkerforge.brickviewer.fx.mainpane.showDiagram;
+package org.rapidpm.iot.tinkerforge.brickviewer.fx.mainpane.showdiagram;
 
+import javafx.scene.chart.LineChart;
+import javafx.scene.layout.VBox;
 import org.rapidpm.commons.cdi.fx.components.tableview.cell.CDIButtonCell;
 import org.rapidpm.commons.cdi.logger.CDILogger;
 import org.rapidpm.iot.tinkerforge.brickviewer.fx.mainpane.BrickElement;
@@ -18,12 +20,11 @@ public class ShowDiagramButtonCell extends CDIButtonCell<BrickElement> {
   private @Inject KeyMapper mapper;
   private @Inject ShowDiagramButtonLogic logic;
 
-  public ShowDiagramButtonCell() {
-  }
+  public ShowDiagramButtonCell() { }
 
   @Override
   public String getButtonLabelText() {
-    return mapper.map("showDiagramActive");
+    return mapper.map("showDiagramInActive");
   }
 
   @PostConstruct
@@ -34,6 +35,12 @@ public class ShowDiagramButtonCell extends CDIButtonCell<BrickElement> {
     }
 
     addCellAction(action -> {
+      action.setShowDiagram(!action.getShowDiagram());
+      System.out.println("workOnRowItem = " + action);
+
+    });
+
+    addCellAction(action -> {
       if (action.getShowDiagram()) {
         cellButton.setText(mapper.map("showDiagramActive"));
       } else {
@@ -42,11 +49,17 @@ public class ShowDiagramButtonCell extends CDIButtonCell<BrickElement> {
     });
 
     addCellAction(action -> {
-      action.setShowDiagram(!action.getShowDiagram());
-      System.out.println("workOnRowItem = " + action);
+      final String chartNodeID = action.getBrickType() + " - " + action.getMasterUID() + "/" + action.getBrickUID();
 
+      if (action.getShowDiagram()) {
+        final LineChart lineChart = logic.createLineChartFor(chartNodeID);
+        final VBox diagramVBox = (VBox) cellButton.getScene().lookup("#diagramVBox");
+        diagramVBox.getChildren().add(lineChart);
+
+      } else {
+        final VBox diagramVBox = (VBox) cellButton.getScene().lookup("#diagramVBox");
+        diagramVBox.getChildren().removeIf(p -> p.getId().equals(chartNodeID));
+      }
     });
-
   }
-
 }

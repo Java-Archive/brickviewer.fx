@@ -1,4 +1,4 @@
-package org.rapidpm.iot.tinkerforge.brickviewer.fx.mainpane.showDiagram;
+package org.rapidpm.iot.tinkerforge.brickviewer.fx.mainpane.showdiagram;
 
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;

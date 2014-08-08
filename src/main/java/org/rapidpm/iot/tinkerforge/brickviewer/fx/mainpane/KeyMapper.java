@@ -15,6 +15,13 @@ public class KeyMapper {
 
 
     public String map(String key) {
-        return propertyRegistryService.getRessourceForKey("main."+key);
+        return propertyRegistryService.getRessourceForKey("mainpane."+key);
     }
+
+    public String mapDataSourcePane(String key) {
+        return propertyRegistryService.getRessourceForKey("datasourcepane."+key);
+    }
+
+
+
 }
